@@ -1,131 +1,130 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <title>Tshabalala's Kota Joint</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
 <style>
-
 body{
-font-family:Arial;
+font-family: Arial;
+background:#f7f7f7;
 margin:0;
-background:#ffffff;
 }
 
 header{
-background:red;
+background:#c40000;
 color:white;
-padding:25px;
+padding:20px;
 text-align:center;
 }
 
-.logo{
-font-size:30px;
-font-weight:bold;
-}
-
-.section{
-padding:20px;
-}
-
 .menu{
-background:#f7f7f7;
+padding:20px;
 }
 
 .menu-item{
 display:flex;
 justify-content:space-between;
-padding:12px;
-border-bottom:1px solid #ddd;
-font-size:18px;
+padding:10px;
+background:white;
+margin-bottom:10px;
+border-radius:5px;
 }
 
-.button{
-display:block;
-background:red;
-color:white;
-text-align:center;
-padding:15px;
-margin:12px 0;
-text-decoration:none;
-border-radius:6px;
-font-size:18px;
+button{
+background:#ff9900;
+border:none;
+padding:8px 12px;
+cursor:pointer;
 }
 
-.location{
-background:#f7f7f7;
+.order{
+background:white;
 padding:20px;
-}
-
-footer{
-background:#222;
-color:white;
-text-align:center;
-padding:15px;
+margin:20px;
 }
 
 </style>
-
 </head>
 
 <body>
 
 <header>
-
-<div class="logo">
-Tshabalala's Kota Joint
-</div>
-
-<p>Fresh Township Kotas</p>
-
-<p>Open Daily: 6AM – 9PM</p>
-
+<h1>Tshabalala's Kota Joint</h1>
+<p>Open Daily 06:00 – 21:00</p>
 </header>
 
-<div class="section menu">
+<div class="menu">
 
-<h2>Menu</h2>
+<h2>Kota Menu</h2>
+
+<div class="menu-item">
+<span>Chips + French</span>
+<span>R17 <button onclick="add('Chips + French',17)">Order</button></span>
+</div>
+
+<div class="menu-item">
+<span>French + Vienna</span>
+<span>R20 <button onclick="add('French + Vienna',20)">Order</button></span>
+</div>
+
+<div class="menu-item">
+<span>French + Burger</span>
+<span>R20 <button onclick="add('French + Burger',20)">Order</button></span>
+</div>
+
+<div class="menu-item">
+<span>French + Cheese</span>
+<span>R23 <button onclick="add('French + Cheese',23)">Order</button></span>
+</div>
+
+<div class="menu-item">
+<span>French + Egg</span>
+<span>R25 <button onclick="add('French + Egg',25)">Order</button></span>
+</div>
 
 <div class="menu-item">
 <span>French + Vienna + Cheese</span>
-<span>R25</span>
+<span>R25 <button onclick="add('French + Vienna + Cheese',25)">Order</button></span>
 </div>
 
 </div>
 
-<div class="section">
+<div class="order">
 
-<h2>Order Now</h2>
+<h2>Your Order</h2>
 
-<a class="button" href="https://wa.me/27799172717">
-Order on WhatsApp
-</a>
+<ul id="cart"></ul>
 
-<a class="button" href="#">
-Pay Online
-</a>
+<p>Total: R<span id="total">0</span></p>
+
+<button onclick="pay()">Pay Now</button>
 
 </div>
 
-<div class="location">
+<script>
 
-<h2>Location</h2>
+let total = 0
 
-<p>Madidi</p>
+function add(item,price){
 
-<p>Ko Morago Ga Ntolo Secondary School</p>
+let li = document.createElement("li")
+li.innerText = item + " - R" + price
 
-</div>
+document.getElementById("cart").appendChild(li)
 
-<footer>
+total += price
 
-<p>Phone: 079 917 2717</p>
+document.getElementById("total").innerText = total
 
-<p>Powered by Ouchaks Pty Ltd</p>
+}
 
-</footer>
+function pay(){
+
+alert("Payment integration coming soon")
+
+}
+
+</script>
 
 </body>
 </html>
