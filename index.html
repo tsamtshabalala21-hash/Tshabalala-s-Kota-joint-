@@ -1,130 +1,151 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <title>Tshabalala's Kota Joint</title>
 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <style>
+
 body{
-font-family: Arial;
-background:#f7f7f7;
+font-family:Arial;
 margin:0;
+background:#f5f5f5;
 }
 
 header{
-background:#c40000;
+background:#d60000;
 color:white;
-padding:20px;
 text-align:center;
+padding:25px;
+}
+
+h1{
+margin:0;
+}
+
+.section{
+padding:20px;
 }
 
 .menu{
-padding:20px;
+background:white;
+border-radius:6px;
+padding:15px;
+margin-bottom:20px;
 }
 
 .menu-item{
 display:flex;
 justify-content:space-between;
 padding:10px;
-background:white;
-margin-bottom:10px;
-border-radius:5px;
+border-bottom:1px solid #eee;
 }
 
-button{
+.button{
+display:block;
 background:#ff9900;
-border:none;
-padding:8px 12px;
-cursor:pointer;
+color:white;
+text-align:center;
+padding:15px;
+margin:10px 0;
+text-decoration:none;
+border-radius:6px;
+font-size:18px;
 }
 
-.order{
-background:white;
-padding:20px;
-margin:20px;
+footer{
+background:#222;
+color:white;
+text-align:center;
+padding:15px;
 }
 
 </style>
+
 </head>
 
 <body>
 
 <header>
+
 <h1>Tshabalala's Kota Joint</h1>
-<p>Open Daily 06:00 – 21:00</p>
+
+<p>Fresh Township Kotas</p>
+
+<p>Open Daily: 06:00 – 21:00</p>
+
 </header>
+
+<div class="section">
 
 <div class="menu">
 
 <h2>Kota Menu</h2>
 
-<div class="menu-item">
-<span>Chips + French</span>
-<span>R17 <button onclick="add('Chips + French',17)">Order</button></span>
-</div>
-
-<div class="menu-item">
-<span>French + Vienna</span>
-<span>R20 <button onclick="add('French + Vienna',20)">Order</button></span>
-</div>
-
-<div class="menu-item">
-<span>French + Burger</span>
-<span>R20 <button onclick="add('French + Burger',20)">Order</button></span>
-</div>
-
-<div class="menu-item">
-<span>French + Cheese</span>
-<span>R23 <button onclick="add('French + Cheese',23)">Order</button></span>
-</div>
-
-<div class="menu-item">
-<span>French + Egg</span>
-<span>R25 <button onclick="add('French + Egg',25)">Order</button></span>
-</div>
-
-<div class="menu-item">
-<span>French + Vienna + Cheese</span>
-<span>R25 <button onclick="add('French + Vienna + Cheese',25)">Order</button></span>
-</div>
+<div class="menu-item"><span>Chips + French</span><span>R17</span></div>
+<div class="menu-item"><span>French + Vienna</span><span>R20</span></div>
+<div class="menu-item"><span>French + Burger</span><span>R20</span></div>
+<div class="menu-item"><span>French + Cheese</span><span>R23</span></div>
+<div class="menu-item"><span>French + Egg</span><span>R25</span></div>
+<div class="menu-item"><span>French + Cheese + Burger</span><span>R25</span></div>
+<div class="menu-item"><span>French + Russian</span><span>R25</span></div>
+<div class="menu-item"><span>French + Vienna + Cheese</span><span>R25</span></div>
+<div class="menu-item"><span>French + Russian + Cheese</span><span>R27</span></div>
+<div class="menu-item"><span>French + Cheese + Egg</span><span>R27</span></div>
+<div class="menu-item"><span>French + Burger + Russian + Egg</span><span>R30</span></div>
+<div class="menu-item"><span>French + Russian + Egg + Cheese</span><span>R35</span></div>
+<div class="menu-item"><span>French + Burger + Vienna + Cheese</span><span>R35</span></div>
+<div class="menu-item"><span>French + Burger + Egg + Cheese</span><span>R35</span></div>
+<div class="menu-item"><span>French + Burger + Cheese + Vienna + Egg</span><span>R40</span></div>
+<div class="menu-item"><span>French + Burger + Cheese + Russian + Egg</span><span>R46</span></div>
 
 </div>
 
-<div class="order">
+<div class="menu">
 
-<h2>Your Order</h2>
+<h2>Chips</h2>
 
-<ul id="cart"></ul>
-
-<p>Total: R<span id="total">0</span></p>
-
-<button onclick="pay()">Pay Now</button>
+<div class="menu-item"><span>Small Chips</span><span>R20</span></div>
+<div class="menu-item"><span>Large Chips</span><span>R40</span></div>
 
 </div>
 
-<script>
+<div class="menu">
 
-let total = 0
+<h2>Extras</h2>
 
-function add(item,price){
+<div class="menu-item"><span>Russian</span><span>R14</span></div>
+<div class="menu-item"><span>Vienna</span><span>R5</span></div>
+<div class="menu-item"><span>Cheese</span><span>R5</span></div>
+<div class="menu-item"><span>French</span><span>R2</span></div>
 
-let li = document.createElement("li")
-li.innerText = item + " - R" + price
+</div>
 
-document.getElementById("cart").appendChild(li)
+<a class="button" href="https://wa.me/27799172717">
 
-total += price
+Order on WhatsApp
 
-document.getElementById("total").innerText = total
+</a>
 
-}
+<a class="button" href="#">
 
-function pay(){
+Pay Online
 
-alert("Payment integration coming soon")
+</a>
 
-}
+</div>
 
-</script>
+<footer>
+
+<p>Phone: 079 917 2717</p>
+
+<p>Location: Ko Morago Ga Ntolo Secondary School, Madidi</p>
+
+<p>Powered by Ouchaks Pty Ltd</p>
+
+</footer>
 
 </body>
-</html>
+  </html>
